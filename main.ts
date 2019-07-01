@@ -202,9 +202,9 @@ namespace LANDZO_TS {
         pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
     }
     
-	//% blockId=MoonCar_Sound block="声音|%index1|"
+	//% blockId="MoonCar_Sound" block="声音|%index1|"
     //% weight=120
-    export function Servo_MoonCarSound(index1:MoonCarSound): void {
+    export function MoonCarSound_func(index1:MoonCarSound): void {
 	    switch (index1) {
 			case 1:{
 				write_byte_moon(48);
