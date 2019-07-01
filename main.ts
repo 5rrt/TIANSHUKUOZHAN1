@@ -203,10 +203,8 @@ namespace LANDZO_TS {
     }
     
 	//% blockId="MoonCar_Sound" block="声音|%index1|"
-    //% weight=100
-    //% degree.min=0 degree.max=180
+    //% weight=90 blockGap=8
     export function Servo_MoonCarSound(index1:MoonCarSound): void {
-	let temp_row: number = 0;
 	    switch (index1) {
 			case 1:{
 				write_byte_moon(48);
@@ -304,7 +302,6 @@ namespace LANDZO_TS {
 			case 32:{
 				write_byte_moon(75);
 			}break;				
-	
 	      }
 	}
 	
