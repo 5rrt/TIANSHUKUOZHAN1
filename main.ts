@@ -116,6 +116,40 @@ namespace LANDZO_TS {
 		Yellow =7,
 		Close=8,
 }
+     export enum MoonCarSound{
+        WelcomeToUseLANDZOMoonCar=1,
+		Forward=2,
+		Backward=3,
+		Drift=4,
+		LANDZOStar=5,
+		Chinese_wo=6,
+		Chinese_ai=7,
+		Chinese_ni=8,
+		Chinese_xie=9,
+		Chinese_sheng=10,
+		Chinese_ri=11,
+		Chinese_kuai=12,
+		Chinese_le=13,
+		Chinese_ying=14,
+		Chinese_xi=15,
+		Chinese_huan=16,
+		Chinese_lai=17,
+		Chinese_dao=18,
+		Chinese_zhai=19,
+		Chinese_xing=20,
+		Chinese_ji=21,
+		Chinese_shi=22,
+		number_0=23,
+		number_1=24,
+		number_2=25,
+		number_3=26,
+		number_4=27,
+		number_5=28,
+		number_6=29,
+		number_7=30,
+		number_8=31,
+		number_9=32,		
+}
 
     function write_byte_moon(cmd: number): void {
         let buf = pins.createBuffer(1);
@@ -167,15 +201,119 @@ namespace LANDZO_TS {
         buf[3] = dat2;
         pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
     }
-//	function write_byte_MoonCar(cmd: number): void {
-//        let buf = pins.createBuffer(4);
- //       buf[0] = cmd;
-//        buf[1] = dat0;
-//        buf[2] = dat1;
- //       buf[3] = dat2;
-//        pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
- //   }
     
+	//% blockId=MoonCar_Sound block="声音|%index1|"
+    //% weight=100
+    //% degree.min=0 degree.max=180
+    export function Servo_MoonCarSound(index1:MoonCarSound): void {
+	let temp_row: number = 0;
+	    switch (index1) {
+			case 1:{
+				write_byte_moon(48);
+			}break;
+			case 2:{
+				write_byte_moon(78);
+			}break;
+			case 3:{
+				write_byte_moon(77);
+			}break;
+			case 4:{
+				write_byte_moon(79);
+			}break;
+			case 5:{
+				write_byte_moon(80);
+			}break;
+			case 6:{
+				write_byte_moon(55);
+			}break;
+			case 7:{
+				write_byte_moon(56);
+			}break;
+			case 8:{
+				write_byte_moon(57);
+			}break;
+			case 9:{
+				write_byte_moon(58);
+			}break;
+			case 10:{
+				write_byte_moon(59);
+			}break;
+			case 11:{
+				write_byte_moon(60);
+			}break;
+			case 12:{
+				write_byte_moon(61);
+			}break;
+			case 13:{
+				write_byte_moon(62);
+			}break;
+			case 14:{
+				write_byte_moon(63);
+			}break;
+			case 15:{
+				write_byte_moon(64);
+			}break;
+			case 16:{
+				write_byte_moon(65);
+			}break;
+			case 17:{
+				write_byte_moon(81);
+			}break;
+			case 18:{
+				write_byte_moon(82);
+			}break;
+			case 19:{
+				write_byte_moon(83);
+			}break;
+			case 20:{
+				write_byte_moon(84);
+			}break;
+			case 21:{
+				write_byte_moon(85);
+			}break;
+			case 22:{
+				write_byte_moon(86);
+			}break;
+			case 23:{
+				write_byte_moon(66);
+			}break;
+			case 24:{
+				write_byte_moon(67);
+			}break;
+			case 25:{
+				write_byte_moon(68);
+			}break;
+			case 26:{
+				write_byte_moon(69);
+			}break;
+			case 27:{
+				write_byte_moon(70);
+			}break;
+			case 28:{
+				write_byte_moon(71);
+			}break;
+			case 29:{
+				write_byte_moon(72);
+			}break;
+			case 30:{
+				write_byte_moon(73);
+			}break;
+			case 31:{
+				write_byte_moon(74);
+			}break;
+			case 32:{
+				write_byte_moon(75);
+			}break;				
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	//% blockId=MoonLight_color block="车灯|%index1| 颜色 |%index2|"
     //% weight=100
     //% degree.min=0 degree.max=180
@@ -298,9 +436,6 @@ namespace LANDZO_TS {
 		}
 	
 	}
-	
-	
-	
 	
     //% blockId="MAX7219_show_point" block="点阵屏显示 |行 %r|列 %l|状态 %s|"
     //% weight=30 blockGap=80
