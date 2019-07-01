@@ -210,16 +210,16 @@ namespace LANDZO_TS {
 				write_byte_moon(48);
 			}break;
 			case 2:{
-				write_byte_moon(78);
-			}break;
-			case 3:{
 				write_byte_moon(77);
 			}break;
+			case 3:{
+				write_byte_moon(76);
+			}break;
 			case 4:{
-				write_byte_moon(79);
+				write_byte_moon(78);
 			}break;
 			case 5:{
-				write_byte_moon(80);
+				write_byte_moon(79);
 			}break;
 			case 6:{
 				write_byte_moon(55);
