@@ -209,7 +209,90 @@ namespace LANDZO_TS {
 						write_byte_moon(34);
 					}break;
 				}
-				
+			}break;
+			case 2:{
+				switch (index2){
+					case 1:{
+						write_byte_moon(11);
+					}break;
+					case 2:{
+						write_byte_moon(15);
+					}break;
+					case 3:{
+						write_byte_moon(19);
+					}break;
+					case 4:{
+						write_byte_moon(7);
+					}break;
+					case 5:{
+						write_byte_moon(27);
+					}break;
+					case 6:{
+						write_byte_moon(23);
+					}break;
+					case 7:{
+						write_byte_moon(31);
+					}break;
+					case 8:{
+						write_byte_moon(35);
+					}break;
+				}
+			}break;
+			case 3:{
+				switch (index2){
+					case 1:{
+						write_byte_moon(12);
+					}break;
+					case 2:{
+						write_byte_moon(16);
+					}break;
+					case 3:{
+						write_byte_moon(20);
+					}break;
+					case 4:{
+						write_byte_moon(8);
+					}break;
+					case 5:{
+						write_byte_moon(28);
+					}break;
+					case 6:{
+						write_byte_moon(24);
+					}break;
+					case 7:{
+						write_byte_moon(32);
+					}break;
+					case 8:{
+						write_byte_moon(36);
+					}break;
+				}
+			}break;
+			case 4:{
+				switch (index2){
+					case 1:{
+						write_byte_moon(13);
+					}break;
+					case 2:{
+						write_byte_moon(17);
+					}break;
+					case 3:{
+						write_byte_moon(21);
+					}break;
+					case 4:{
+						write_byte_moon(9);
+					}break;
+					case 5:{
+						write_byte_moon(29);
+					}break;
+					case 6:{
+						write_byte_moon(25);
+					}break;
+					case 7:{
+						write_byte_moon(33);
+					}break;
+					case 8:{
+						write_byte_moon(37);
+					}break;
+				}	
 			}break;
 			
 		}
@@ -698,18 +781,7 @@ namespace LANDZO_TS {
         setPwm(index + 7, 0, value)
     }
 /***********************************************************/
-     //% blockId=landzobit_servo block="舵机丛|%index|角度丛 %degree"
-    //% weight=100
-    //% degree.min=0 degree.max=180
-    export function Servo1(index: Servos, degree: number): void {
-        if (!initialized) {
-            initPCA9685()
-        }
-        // 50hz: 20,000 us
-        let v_us = (degree * 1800 / 180 + 600) // 0.6 ~ 2.4
-        let value = v_us * 4096 / 20000
-        setPwm(index + 7, 0, value)
-    }
+   
 
 /***********************************************************/
     //% blockId=landzobit_motor_run block="电机|%index|速度 %speed"
