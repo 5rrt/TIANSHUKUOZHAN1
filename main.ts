@@ -203,7 +203,7 @@ namespace LANDZO_TS {
     }
     
 	//% blockId=MoonCar_Sound block="声音|%index1|"
-    //% weight=87
+    //% weight=120
     export function Servo_MoonCarSound(index1:MoonCarSound): void {
 	    switch (index1) {
 			case 1:{
