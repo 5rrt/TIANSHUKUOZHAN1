@@ -202,7 +202,7 @@ namespace LANDZO_TS {
         pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
     }
     
-	//% blockId=MoonCar_Sound block="声音|%index1|"
+	//% blockId="MoonCar_Sound" block="声音|%index1|"
     //% weight=100
     //% degree.min=0 degree.max=180
     export function Servo_MoonCarSound(index1:MoonCarSound): void {
@@ -305,8 +305,8 @@ namespace LANDZO_TS {
 				write_byte_moon(75);
 			}break;				
 	
+	      }
 	}
-	}
 	
 	
 	
@@ -315,7 +315,7 @@ namespace LANDZO_TS {
 	
 	
 	
-	//% blockId=MoonLight_color block="车灯|%index1| 颜色 |%index2|"
+	//% blockId="MoonLight_color" block="车灯|%index1| 颜色 |%index2|"
     //% weight=100
     //% degree.min=0 degree.max=180
     export function Servo_MoonCar(index1:MoonCar_Led, index2:MoonCarRGB_Color): void {
