@@ -117,7 +117,7 @@ namespace LANDZO_TS {
 		Close=8,
 }
      export enum MoonCarSound{
-        WelcomeToUseLANDZOMoonCar=1,
+        WelcomeLANDZO=1,
 		Forward=2,
 		Backward=3,
 		Drift=4,
@@ -202,10 +202,10 @@ namespace LANDZO_TS {
         pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
     }
     
-	//% blockId="MoonCar_Sound" block="声音|%index1|"
+	//% blockId="MoonCar_Sound" block="声音|%index4|"
     //% weight=120
-    export function MoonCarSound_func(index1:MoonCarSound): void {
-	    switch (index1) {
+    export function MoonCarSound_func(index4:MoonCarSound): void {
+	    switch (index4) {
 			case 1:{
 				write_byte_moon(48);
 			}break;
