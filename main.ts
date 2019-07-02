@@ -209,8 +209,12 @@ namespace LANDZO_TS {
         pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
     }
     
+	
+	
+	
+	
 	//% blockId="C_MoonCarMove" block="车子方向|%index5|"
-    //% weight=125
+    //% weight=90
     export function CMoonCarMove(index5:MoonCarMove): void {
 	    switch (index5) {
 			case 1:{
