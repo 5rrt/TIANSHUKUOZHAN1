@@ -210,7 +210,7 @@ namespace LANDZO_TS {
     }
     
 	//% blockId="MoonCar_Move" block="车子方向|%index5|"
-    //% weight=120
+    //% weight=130
     export function MoonCarMove_func(index5:MoonCarMove): void {
 	    switch (index5) {
 			case 1:{
