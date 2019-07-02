@@ -209,9 +209,9 @@ namespace LANDZO_TS {
         pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
     }
     
-	//% blockId="MoonCar_Move" block="车子方向|%index5|"
-    //% weight=130
-    export function MoonCarMove_func(index5:MoonCarMove): void {
+	//% blockId="C_MoonCar_Move" block="车子方向|%index5|"
+    //% weight=120
+    export function C_MoonCarMove(index5:MoonCarMove): void {
 	    switch (index5) {
 			case 1:{
 				write_byte_moon(01);
@@ -230,8 +230,6 @@ namespace LANDZO_TS {
 			}break;
 		}
 	}
-	
-	
 	
 	
 	//% blockId="MoonCar_Sound" block="声音|%index4|"
