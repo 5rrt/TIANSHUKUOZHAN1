@@ -213,24 +213,24 @@ namespace LANDZO_TS {
 	
 	
 	
-	//% blockId="C_MoonCarMove" block="车子方向|%index5|"
-    //% weight=90
+	//% blockId="MOONCARMOVE" block="车子方向 %index5"
+    //% weight=120
     export function CMoonCarMove(index5:MoonCarMove): void {
 	    switch (index5) {
 			case 1:{
-				write_byte_moon(01);
+				write_byte_moon(1);
 			}break;
 			case 2:{
-				write_byte_moon(02);
+				write_byte_moon(2);
 			}break;
 			case 3:{
-				write_byte_moon(03);
+				write_byte_moon(3);
 			}break;
 			case 4:{
-				write_byte_moon(04);
+				write_byte_moon(4);
 			}break;
 			case 5:{
-				write_byte_moon(05);
+				write_byte_moon(5);
 			}break;
 		}
 	}
