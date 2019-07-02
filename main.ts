@@ -150,6 +150,13 @@ namespace LANDZO_TS {
 		number_8=31,
 		number_9=32,		
 }
+ export enum MoonCarMove{
+	    Forward=1;
+		Backward=2;
+		left=3;
+		right=4;
+		stop=5;
+ }
 
     function write_byte_moon(cmd: number): void {
         let buf = pins.createBuffer(1);
@@ -202,6 +209,31 @@ namespace LANDZO_TS {
         pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
     }
     
+	//% blockId="MoonCar_Move" block="车子方向|%index5|"
+    //% weight=120
+    export function MoonCarMove_func(index5:MoonCarMove): void {
+	    switch (index5) {
+			case 1:{
+				write_byte_moon(01);
+			}break;
+			case 2:{
+				write_byte_moon(02);
+			}break;
+			case 3:{
+				write_byte_moon(03);
+			}break;
+			case 4:{
+				write_byte_moon(04);
+			}break;
+			case 5:{
+				write_byte_moon(05);
+			}break;
+		}
+	}
+	
+	
+	
+	
 	//% blockId="MoonCar_Sound" block="声音|%index4|"
     //% weight=120
     export function MoonCarSound_func(index4:MoonCarSound): void {
