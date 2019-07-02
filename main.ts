@@ -151,11 +151,11 @@ namespace LANDZO_TS {
 		number_9=32,		
 }
  export enum MoonCarMove{
-	    Forward=1;
-		Backward=2;
-		left=3;
-		right=4;
-		stop=5;
+	    Forward=1,
+		Backward=2,
+		left=3,
+		right=4,
+		stop=5,
  }
 
     function write_byte_moon(cmd: number): void {
