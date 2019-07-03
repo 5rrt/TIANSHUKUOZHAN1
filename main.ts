@@ -799,9 +799,9 @@ namespace LANDZO_TS {
 
     //% blockId="Ultrasonic_read" block="超声波距离值"
     //% weight=50
-    export function Ultrasonic_C1() :number {
+    export function Ultrasonic() :number {
         write_byte0(0x55);
-        basic.pause(4000);
+        basic.pause(500);
         return read_byte();
     }
     
