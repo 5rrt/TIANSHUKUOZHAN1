@@ -624,7 +624,7 @@ namespace LANDZO_TS {
         write_byte0(0x69);
     }
     
-    //% blockId="SMG" block="数码管显示 %r"
+    //% blockId="SMG" block="数码管显示 |%r|"
     //% weight=90 blockGap=8
     export function SMG(num: number) :void {
         write_byte2(0x70, num&0xff, num>>8);
@@ -799,9 +799,9 @@ namespace LANDZO_TS {
 
     //% blockId="Ultrasonic_read" block="超声波距离值"
     //% weight=50
-    export function Ultrasonic() :number {
+    export function Ultrasonic_C1() :number {
         write_byte0(0x55);
-        basic.pause(500)
+        basic.pause(4000);
         return read_byte();
     }
     
