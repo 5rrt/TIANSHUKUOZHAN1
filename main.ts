@@ -801,7 +801,7 @@ namespace LANDZO_TS {
     //% weight=50
     export function Ultrasonic() :number {
         write_byte0(0x55);
-        basic.pause(500);
+        basic.pause(500)
         return read_byte();
     }
     
