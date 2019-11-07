@@ -786,7 +786,7 @@ namespace LANDZO_TS {
         return read_half_word()/10;
     }
     
-    //% blockId="DHT11_read_temperature" block="温湿度传感器温度数值"
+    //% blockId="DHT11_read_temperature" block="温湿度传感器温度数值01"
     //% weight=50
     export function DHT11_temperature01() :number {
 		basic.pause(100);
