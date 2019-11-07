@@ -100,70 +100,7 @@ namespace LANDZO_TS {
         RESET = 0,
         SET = 1,
     } 
-    export enum MoonCar_Led{
-		front_left=1,
-		front_right=2,
-		back_left=3,
-		back_right = 4,
-	}
-	 export enum MoonCarRGB_Color{
-        Red = 1,
-        Green = 2,
-        Blue = 3,
-        White = 4,
-		Cyan  =5,
-		Pink = 6,
-		Yellow =7,
-		Close=8,
-}
-     export enum MoonCarSound{
-        WelcomeLANDZO=1,
-		Forward=2,
-		Backward=3,
-		Drift=4,
-		LANDZOStar=5,
-		Ch_wo=6,
-		Ch_ai=7,
-		Ch_ni=8,
-		Ch_xie=9,
-		Ch_sheng=10,
-		Ch_ri=11,
-		Ch_kuai=12,
-		Ch_le=13,
-		Ch_ying=14,
-		Ch_xi=15,
-		Ch_huan=16,
-		Ch_lai=17,
-		Ch_dao=18,
-		Ch_zhai=19,
-		Ch_xing=20,
-		Ch_ji=21,
-		Ch_shi=22,
-		number_0=23,
-		number_1=24,
-		number_2=25,
-		number_3=26,
-		number_4=27,
-		number_5=28,
-		number_6=29,
-		number_7=30,
-		number_8=31,
-		number_9=32,		
-}
- export enum MoonCarMove{
-	    Forward=1,
-		Backward=2,
-		left=3,
-		right=4,
-		stop=5,
- }
-
-    function write_byte_moon(cmd: number): void {
-        let buf = pins.createBuffer(1);
-        buf[0] = cmd;
-        pins.i2cWriteBuffer(35, buf);//月球车IIC地址35
-    }
-		
+    
     function joy_read(cmd: number) :number {
         let buf = pins.createBuffer(1);
         buf[0] = cmd;
@@ -209,265 +146,6 @@ namespace LANDZO_TS {
         pins.i2cWriteBuffer(BASE_BOARD_I2C_ADDR, buf)
     }
     
-	
-	
-	
-	
-	//% blockId="MOONCARMOVE" block="车子方向 %index5"
-    //% weight=120
-    export function CMoonCarMove(index5:MoonCarMove): void {
-	    switch (index5) {
-			case 1:{
-				write_byte_moon(1);
-			}break;
-			case 2:{
-				write_byte_moon(2);
-			}break;
-			case 3:{
-				write_byte_moon(3);
-			}break;
-			case 4:{
-				write_byte_moon(4);
-			}break;
-			case 5:{
-				write_byte_moon(5);
-			}break;
-		}
-	}
-	
-	
-	//% blockId="MoonCar_Sound" block="声音|%index4|"
-    //% weight=120
-    export function MoonCarSound_func(index4:MoonCarSound): void {
-	    switch (index4) {
-			case 1:{
-				write_byte_moon(48);
-			}break;
-			case 2:{
-				write_byte_moon(77);
-			}break;
-			case 3:{
-				write_byte_moon(76);
-			}break;
-			case 4:{
-				write_byte_moon(78);
-			}break;
-			case 5:{
-				write_byte_moon(79);
-			}break;
-			case 6:{
-				write_byte_moon(55);
-			}break;
-			case 7:{
-				write_byte_moon(56);
-			}break;
-			case 8:{
-				write_byte_moon(57);
-			}break;
-			case 9:{
-				write_byte_moon(58);
-			}break;
-			case 10:{
-				write_byte_moon(59);
-			}break;
-			case 11:{
-				write_byte_moon(60);
-			}break;
-			case 12:{
-				write_byte_moon(61);
-			}break;
-			case 13:{
-				write_byte_moon(62);
-			}break;
-			case 14:{
-				write_byte_moon(63);
-			}break;
-			case 15:{
-				write_byte_moon(64);
-			}break;
-			case 16:{
-				write_byte_moon(65);
-			}break;
-			case 17:{
-				write_byte_moon(80);
-			}break;
-			case 18:{
-				write_byte_moon(81);
-			}break;
-			case 19:{
-				write_byte_moon(82);
-			}break;
-			case 20:{
-				write_byte_moon(83);
-			}break;
-			case 21:{
-				write_byte_moon(84);
-			}break;
-			case 22:{
-				write_byte_moon(85);
-			}break;
-			case 23:{
-				write_byte_moon(66);
-			}break;
-			case 24:{
-				write_byte_moon(67);
-			}break;
-			case 25:{
-				write_byte_moon(68);
-			}break;
-			case 26:{
-				write_byte_moon(69);
-			}break;
-			case 27:{
-				write_byte_moon(70);
-			}break;
-			case 28:{
-				write_byte_moon(71);
-			}break;
-			case 29:{
-				write_byte_moon(72);
-			}break;
-			case 30:{
-				write_byte_moon(73);
-			}break;
-			case 31:{
-				write_byte_moon(74);
-			}break;
-			case 32:{
-				write_byte_moon(75);
-			}break;				
-	      }
-	}
-	
-	
-	
-	
-	
-	
-	
-	//% blockId="MoonLight_color" block="车灯|%index1| 颜色 |%index2|"
-    //% weight=100
-    //% degree.min=0 degree.max=180
-    export function Servo_MoonCar(index1:MoonCar_Led, index2:MoonCarRGB_Color): void {
-		let temp_row: number = 0;
-	    switch (index1) {
-			case 1:{
-				switch (index2){
-					case 1:{
-						write_byte_moon(10);
-					}break;
-					case 2:{
-						write_byte_moon(14);
-					}break;
-					case 3:{
-						write_byte_moon(18);
-					}break;
-					case 4:{
-						write_byte_moon(6);
-					}break;
-					case 5:{
-						write_byte_moon(26);
-					}break;
-					case 6:{
-						write_byte_moon(22);
-					}break;
-					case 7:{
-						write_byte_moon(30);
-					}break;
-					case 8:{
-						write_byte_moon(34);
-					}break;
-				}
-			}break;
-			case 2:{
-				switch (index2){
-					case 1:{
-						write_byte_moon(11);
-					}break;
-					case 2:{
-						write_byte_moon(15);
-					}break;
-					case 3:{
-						write_byte_moon(19);
-					}break;
-					case 4:{
-						write_byte_moon(7);
-					}break;
-					case 5:{
-						write_byte_moon(27);
-					}break;
-					case 6:{
-						write_byte_moon(23);
-					}break;
-					case 7:{
-						write_byte_moon(31);
-					}break;
-					case 8:{
-						write_byte_moon(35);
-					}break;
-				}
-			}break;
-			case 3:{
-				switch (index2){
-					case 1:{
-						write_byte_moon(12);
-					}break;
-					case 2:{
-						write_byte_moon(16);
-					}break;
-					case 3:{
-						write_byte_moon(20);
-					}break;
-					case 4:{
-						write_byte_moon(8);
-					}break;
-					case 5:{
-						write_byte_moon(28);
-					}break;
-					case 6:{
-						write_byte_moon(24);
-					}break;
-					case 7:{
-						write_byte_moon(32);
-					}break;
-					case 8:{
-						write_byte_moon(36);
-					}break;
-				}
-			}break;
-			case 4:{
-				switch (index2){
-					case 1:{
-						write_byte_moon(13);
-					}break;
-					case 2:{
-						write_byte_moon(17);
-					}break;
-					case 3:{
-						write_byte_moon(21);
-					}break;
-					case 4:{
-						write_byte_moon(9);
-					}break;
-					case 5:{
-						write_byte_moon(29);
-					}break;
-					case 6:{
-						write_byte_moon(25);
-					}break;
-					case 7:{
-						write_byte_moon(33);
-					}break;
-					case 8:{
-						write_byte_moon(37);
-					}break;
-				}	
-			}break;
-			
-		}
-	
-	}
-	
     //% blockId="MAX7219_show_point" block="点阵屏显示 |行 %r|列 %l|状态 %s|"
     //% weight=30 blockGap=80
     export function MAX7219_show_point(row: ROW, column: COLUMN, state: STATE): void {
@@ -624,10 +302,9 @@ namespace LANDZO_TS {
         write_byte0(0x69);
     }
     
-    //% blockId="SMG" block="数码管显示 |%r|"
+    //% blockId="SMG" block="数码管显示 %r"
     //% weight=90 blockGap=8
     export function SMG(num: number) :void {
-		basic.pause(100);
         write_byte2(0x70, num&0xff, num>>8);
     }
     
@@ -636,8 +313,8 @@ namespace LANDZO_TS {
     export function GPIO_Read_Analog(io: IO_ANALOG_R) :number {
 		basic.pause(100);
 		write_byte1(0x01, io);
-		let CTQ=read_half_word();
-		 basic.pause(100);
+        let iiii=read_half_word();
+		basic.pause(100);
         write_byte1(0x01, io);
         return read_half_word();
     }
@@ -788,25 +465,19 @@ namespace LANDZO_TS {
     
     //% blockId="DHT11_read_temperature" block="温湿度传感器温度数值"
     //% weight=50
-    export function DHT11_temperature01() :number {
+    export function DHT11_temperature() :number {
 		basic.pause(100);
-		write_byte0(0x05);
-        let ctq = read_half_word();
-         ctq &= 0xff;
+		 write_byte0(0x05);
+        let temp1 = read_half_word();
 		basic.pause(100);
         write_byte0(0x05);
-         let temp = read_half_word();
+        let temp = read_half_word();
         return temp & 0xff;
     }
     
     //% blockId="DHT11_read_humidity" block="温湿度传感器湿度数值"
     //% weight=50
     export function DHT11_humidity() :number {
-		basic.pause(100);
-		write_byte0(0x05);
-        let humi = read_half_word();
-         humi >> 8;
-		 basic.pause(100);
         write_byte0(0x05);
         let humi = read_half_word();
         return humi >> 8;
@@ -814,9 +485,9 @@ namespace LANDZO_TS {
 
     //% blockId="Ultrasonic_read" block="超声波距离值"
     //% weight=50
-    export function Ultrasonic_1() :number {
+    export function Ultrasonic() :number {
         write_byte0(0x55);
-        basic.pause(500)
+        basic.pause(500);
         return read_byte();
     }
     
@@ -961,10 +632,7 @@ namespace LANDZO_TS {
         let value = v_us * 4096 / 20000
         setPwm(index + 7, 0, value)
     }
-/***********************************************************/
-   
 
-/***********************************************************/
     //% blockId=landzobit_motor_run block="电机|%index|速度 %speed"
     //% weight=85
     //% speed.min=-255 speed.max=255
