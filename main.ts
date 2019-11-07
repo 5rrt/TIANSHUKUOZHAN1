@@ -312,10 +312,10 @@ namespace LANDZO_TS {
     //% blockId="GPIO_Read_Analog" block="|%io|端口模拟值"
     //% weight=50
     export function GPIO_Read_Analog(io: IO_ANALOG_R) :number {
-		basic.pause(100);
+		basic.pause(50);
 		write_byte1(0x01, io);
         let iiii=read_half_word();
-		basic.pause(100);
+		basic.pause(50);
         write_byte1(0x01, io);
         return read_half_word();
     }
@@ -323,10 +323,10 @@ namespace LANDZO_TS {
     //% blockId="GPIO_Read_Digital" block="|%io|端口数字值"
     //% weight=50
     export function GPIO_Read_Digital(io: IO_DIGITAL_R) :number {
-		basic.pause(100);
+		basic.pause(50);
         write_byte1(0x02, io);
 		let iiii=read_byte();
-		basic.pause(100);
+		basic.pause(50);
         write_byte1(0x02, io);
         return read_byte();
     }    
@@ -464,10 +464,10 @@ namespace LANDZO_TS {
     //% blockId="DS18B20_read" block="温度传感器数值"
     //% weight=50
     export function DS18B20() :number {
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x04);
 		let temp1 = read_half_word();
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x04);
         return read_half_word()/10;
     }
@@ -475,10 +475,10 @@ namespace LANDZO_TS {
     //% blockId="DHT11_read_temperature" block="温湿度传感器温度数值"
     //% weight=50
     export function DHT11_temperature() :number {
-		basic.pause(100);
+		basic.pause(50);
 		write_byte0(0x05);
         let temp1 = read_half_word();
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x05);
         let temp = read_half_word();
         return temp & 0xff;
@@ -487,10 +487,10 @@ namespace LANDZO_TS {
     //% blockId="DHT11_read_humidity" block="温湿度传感器湿度数值"
     //% weight=50
     export function DHT11_humidity() :number {
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x05);
         let humi1 = read_half_word();
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x05);
         let humi = read_half_word();
         return humi >> 8;
@@ -499,7 +499,7 @@ namespace LANDZO_TS {
     //% blockId="Ultrasonic_read" block="超声波距离值"
     //% weight=50
     export function Ultrasonic() :number {
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x55);
         basic.pause(500);
         return read_byte();
@@ -508,10 +508,10 @@ namespace LANDZO_TS {
     //% blockId="BlackTraker_left" block="红外寻迹1"
     //% weight=50
     export function BlackTraker_left() :number {
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x52);
 		let left1 = read_byte();
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x52);
         let left = read_byte();
         if (left & 0x01) {
@@ -523,10 +523,10 @@ namespace LANDZO_TS {
     //% blockId="BlackTraker_right" block="红外寻迹2"
     //% weight=50
     export function BlackTraker_right() :number {
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x52);
 		let right1 = read_byte();
-		basic.pause(100);
+		basic.pause(50);
         write_byte0(0x52);
         let right = read_byte();
         if (right & 0x02) {
