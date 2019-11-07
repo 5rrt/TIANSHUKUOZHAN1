@@ -627,17 +627,17 @@ namespace LANDZO_TS {
     //% blockId="SMG" block="数码管显示 |%r|"
     //% weight=90 blockGap=8
     export function SMG(num: number) :void {
-		basic.pause(40);
+		basic.pause(100);
         write_byte2(0x70, num&0xff, num>>8);
     }
     
     //% blockId="GPIO_Read_Analog" block="|%io|端口模拟值"
     //% weight=50
     export function GPIO_Read_Analog(io: IO_ANALOG_R) :number {
-		basic.pause(40);
+		basic.pause(100);
 		write_byte1(0x01, io);
 		let CTQ=read_half_word();
-		 basic.pause(40);
+		 basic.pause(100);
         write_byte1(0x01, io);
         return read_half_word();
     }
@@ -788,25 +788,25 @@ namespace LANDZO_TS {
     
     //% blockId="DHT11_read_temperature" block="温湿度传感器温度数值"
     //% weight=50
-    export function DHT11_temperature() :number {
-		basic.pause(40);
+    export function DHT11_temperature01() :number {
+		basic.pause(100);
 		write_byte0(0x05);
-        let temp = read_half_word();
-         temp &= 0xff;
-		basic.pause(40);
+        let ctq = read_half_word();
+         ctq &= 0xff;
+		basic.pause(100);
         write_byte0(0x05);
-        let temp = read_half_word();
+         let temp = read_half_word();
         return temp & 0xff;
     }
     
     //% blockId="DHT11_read_humidity" block="温湿度传感器湿度数值"
     //% weight=50
     export function DHT11_humidity() :number {
-		basic.pause(40);
+		basic.pause(100);
 		write_byte0(0x05);
         let humi = read_half_word();
          humi >> 8;
-		 basic.pause(40);
+		 basic.pause(100);
         write_byte0(0x05);
         let humi = read_half_word();
         return humi >> 8;
