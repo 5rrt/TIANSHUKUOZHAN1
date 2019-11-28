@@ -366,7 +366,7 @@ namespace LANDZO_TS {
 		let iiii=read_byte();
 		basic.pause(40);
         write_byte1(0x02, GP1);
-		iiii=!read_byte();
+		iiii=~read_byte();
         return iiii;
     } 
 	
