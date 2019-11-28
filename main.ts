@@ -335,10 +335,10 @@ namespace LANDZO_TS {
     //% weight=50
     export function GPIO_Write_Digital(io: IO_DIGITAL_W, d: number) :void {
 		let dd=d;
-		if(d==0){
+		if(d==1){
 			dd=1;
 		}
-		else if(d==1){
+		else if(d==0){
 			dd=0;
 		}
         write_byte2(0x03, io, dd);
