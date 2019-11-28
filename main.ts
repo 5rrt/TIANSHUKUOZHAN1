@@ -358,14 +358,14 @@ namespace LANDZO_TS {
 		GPIO_Write_Digital(io,dd);
     }
 	
-	 //% blockId="GPIO_Read_Digital_HUOER" block="霍尔传感器|%io|端口数字值"
+	 //% blockId="GPIO_Read_Digital_HUOER" block="霍尔传感器端口数字值"
     //% weight=50
-    export function GPIO_Read_Digital_HUOER(io: IO_DIGITAL_R) :number {
+    export function GPIO_Read_Digital_HUOER() :number {
 		basic.pause(40);
-        write_byte1(0x02, io);
+        write_byte1(0x02, GP1);
 		let iiii=read_byte();
 		basic.pause(40);
-        write_byte1(0x02, io);
+        write_byte1(0x02, GP1);
 		iiii=!read_byte();
         return iiii;
     } 
