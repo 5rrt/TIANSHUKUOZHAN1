@@ -361,7 +361,7 @@ namespace LANDZO_TS {
     //% weight=50
     export function GPIO_Read_Digital_HUOER() :number {
 		basic.pause(40);
-        write_byte1(0x02, 0xb0);
+        write_byte1(0x02, 0xb2);
 		let iiii=read_byte();
 		basic.pause(40);
         write_byte1(0x02, 0xb2);
@@ -374,7 +374,6 @@ namespace LANDZO_TS {
 		}
         return iiii;
     } 
-	
 	//% blockId="GPIO_Read_Digital_TouchSwitch" block="碰撞开关数字值"
     //% weight=50
     //export function GPIO_Read_Digital_TouchSwitch() :number {
