@@ -303,6 +303,9 @@ namespace LANDZO_TS {
         write_byte0(0x69);
     }
    */ 
+   
+   
+   
     //% blockId="SMG" block="数码管显示 %r"
     //% weight=90 blockGap=8
     export function SMG(num: number) :void {
@@ -374,6 +377,9 @@ namespace LANDZO_TS {
 		}
         return iiii;
     } 
+	
+	
+	
 	//% blockId="GPIO_Read_Digital_TouchSwitch" block="碰撞开关数字值"
     //% weight=50
     export function GPIO_Read_Digital_TouchSwitch(io: IO_DIGITAL_R) :number {
@@ -464,6 +470,7 @@ namespace LANDZO_TS {
         return read_half_word();
     }
     
+	
     //% blockId="P2_Read_Digital" block="P2读取数字值"
     //% weight=50
     export function P2_Read_Digital() :number {
