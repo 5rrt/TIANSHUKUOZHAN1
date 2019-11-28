@@ -345,7 +345,7 @@ namespace LANDZO_TS {
     }
 	
 	//**********************CTQLEDTESTBEGIN***********************
-	//% blockId="LED" block="|%io|LED灯写入|%d|"
+	//% blockId="LED" block="LED灯|%io|写入|%d|"
     //% weight=50
     export function LED(io: IO_DIGITAL_W, d: number) :void {
 		let dd=d;
@@ -357,6 +357,30 @@ namespace LANDZO_TS {
 		}
 		GPIO_Write_Digital(io,dd);
     }
+	
+	 //% blockId="GPIO_Read_Digital_HUOER" block="霍尔传感器|%io|端口数字值"
+    //% weight=50
+    export function GPIO_Read_Digital_HUOER(io: IO_DIGITAL_R) :number {
+		basic.pause(40);
+        write_byte1(0x02, io);
+		let iiii=read_byte();
+		basic.pause(40);
+        write_byte1(0x02, io);
+		iiii=!read_byte();
+        return iiii;
+    } 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//**********************CTQLEDTESTEND***********************
 	
 	
