@@ -343,6 +343,33 @@ namespace LANDZO_TS {
 		}
         write_byte2(0x03, io, dd);
     }
+	
+	//**********************CTQLEDTESTBEGIN***********************
+	//% blockId="LED" block="|%io|LED灯写入|%d|"
+    //% weight=50
+    export function LED(io: IO_DIGITAL_W, d: number) :void {
+		let dd=d;
+		if(d==1){
+			dd=0;
+		}
+		else if(d==0){
+			dd=1;
+		}
+		GPIO_Write_Digital(io,dd);
+    }
+	//**********************CTQLEDTESTEND***********************
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     
     /*
     //% blockId="General_IO1_Read_Analog" block="通用IO1读取模拟值"
