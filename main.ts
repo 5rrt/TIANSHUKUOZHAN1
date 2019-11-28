@@ -391,9 +391,9 @@ namespace LANDZO_TS {
 		}
         return iiii;
     }
-	//% blockId="GPIO_Read_Digital_TouchSwitch" block="光敏电阻数字值"
+	//% blockId="GPIO_Read_Digital_LightSensor" block="光敏电阻数字值"
     //% weight=50
-    export function GPIO_Read_Digital_TouchSwitch(io: IO_DIGITAL_R) :number {
+    export function GPIO_Read_Digital_LightSensor(io: IO_DIGITAL_R) :number {
 		basic.pause(40);
         write_byte1(0x02, io);
 		let iiii=read_byte();
