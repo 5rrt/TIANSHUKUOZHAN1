@@ -391,7 +391,23 @@ namespace LANDZO_TS {
 		}
         return iiii;
     }
-	
+	//% blockId="GPIO_Read_Digital_TouchSwitch" block="光敏电阻数字值"
+    //% weight=50
+    export function GPIO_Read_Digital_TouchSwitch(io: IO_DIGITAL_R) :number {
+		basic.pause(40);
+        write_byte1(0x02, io);
+		let iiii=read_byte();
+		basic.pause(40);
+        write_byte1(0x02, io);
+		iiii=read_byte();
+		if(iiii==0){
+			iiii=1;
+		}
+		else if(iiii==1){
+			iiii=0;
+		}
+        return iiii;
+    }
 	
 	
 	
@@ -572,7 +588,7 @@ namespace LANDZO_TS {
         return read_byte();
     }
     
-    //% blockId="BlackTraker_left" block="红外寻迹1"
+    //% blockId="BlackTraker_left" block="红外寻迹2"
     //% weight=50
     export function BlackTraker_left() :number {
 		basic.pause(10);
@@ -582,12 +598,12 @@ namespace LANDZO_TS {
         write_byte0(0x52);
         let left = read_byte();
         if (left & 0x01) {
-            return 1;
+            return 0;
         }
-        return 0;
+        return 1;
     }
     
-    //% blockId="BlackTraker_right" block="红外寻迹2"
+    //% blockId="BlackTraker_right" block="红外寻迹1"
     //% weight=50
     export function BlackTraker_right() :number {
 		basic.pause(10);
@@ -597,15 +613,22 @@ namespace LANDZO_TS {
         write_byte0(0x52);
         let right = read_byte();
         if (right & 0x02) {
-            return 1;
+            return 0;
         }
-        return 0;
+        return 1;
     }
     
     //% blockId="Key_read" block="读取按键|%key|状态"
     //% weight=50
     export function Key_read(key: Keys) :number {
-        return joy_read(key);
+		let keyv=joy_read(key);
+		if(keyv==0){
+			keyv=1;
+		}
+		else if(keyv==1){
+			keyv=0;
+		}
+        return keyv;
     }
     
     
