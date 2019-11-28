@@ -376,6 +376,24 @@ namespace LANDZO_TS {
         return iiii;
     } 
 	
+	//% blockId="GPIO_Read_Digital_TouchSwitch" block="碰撞开关数字值"
+    //% weight=50
+    export function GPIO_Read_Digital_TouchSwitch() :number {
+		basic.pause(40);
+        write_byte1(0x02, P1);
+		let iiii=read_byte();
+		basic.pause(40);
+        write_byte1(0x02, P1);
+		iiii=read_byte();
+		if(iiii==0){
+			iiii=1;
+		}
+		else if(iiii==1){
+			iiii=0;
+		}
+        return iiii;
+    }
+	
 	
 	//**********************CTQLEDTESTEND***********************
 	
