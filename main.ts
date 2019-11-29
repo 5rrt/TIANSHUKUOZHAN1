@@ -39,12 +39,15 @@ namespace LANDZO_TS {
         K6 = 0x06,
         K7 = 0x07,
         K8 = 0x08,
-        Joystick1_key = 0x09,
-        Joystick2_key = 0x0A,
-        Joystick1_x = 0x0B,
-        Joystick1_y = 0x0C,
-        Joystick2_x = 0x0D,
-        Joystick2_y = 0x0E,
+		YaoGan1_key = 0x09,
+        YaoGan2_key = 0x0A,
+    }
+	export enum YGKeys {
+
+        YaoGan1_x = 0x0B,
+        YaoGan1_y = 0x0C,
+        YaoGan2_x = 0x0D,
+        YaoGan2_y = 0x0E,
     }
     
     export enum IO_ANALOG_R {
@@ -624,6 +627,14 @@ namespace LANDZO_TS {
 			keyv=0;
 		}
         return keyv;
+    }
+	
+	
+	
+	 //% blockId="YaoGan_read" block="读取遥感方向|%key|数据"
+    //% weight=50
+    export function YaoGan_read(key: YGKeys) :number {
+        return joy_read(key);
     }
     
     const PCA9685_ADDRESS = 0x40
