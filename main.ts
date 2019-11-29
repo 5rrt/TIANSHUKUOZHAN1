@@ -108,7 +108,7 @@ namespace LANDZO_TS {
         let buf = pins.createBuffer(1);
         buf[0] = cmd;
         pins.i2cWriteBuffer(JOY_BOARD_I2C_ADDR, buf);
-        return pins.i2cReadNumber(JOY_BOARD_I2C_ADDR, NumberFormat.UInt16BE);
+        return pins.i2cReadNumber(JOY_BOARD_I2C_ADDR, NumberFormat.Int16LE);
     }
     
     function read_byte() :number {
@@ -631,7 +631,7 @@ namespace LANDZO_TS {
 	
 	
 	
-	 //% blockId="YaoGan_read" block="读取遥感方向|%key|数据"
+	 //% blockId="YaoGan_read" block="读取遥感方向按键|%key|数据"
     //% weight=50
     export function YaoGan_read(key: YGKeys) :number {
         return joy_read(key);
