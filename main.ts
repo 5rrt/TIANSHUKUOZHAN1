@@ -596,9 +596,9 @@ namespace LANDZO_TS {
         write_byte0(0x52);
         let left = read_byte();
         if (left & 0x01) {
-            return 0;
+            return 1;
         }
-        return 1;
+        return 0;
     }
     
     //% blockId="BlackTraker_right" block="红外寻迹1"
@@ -611,9 +611,9 @@ namespace LANDZO_TS {
         write_byte0(0x52);
         let right = read_byte();
         if (right & 0x02) {
-            return 0;
+            return 1;
         }
-        return 1;
+        return 0;
     }
     
     //% blockId="Key_read" block="读取按键|%key|状态"
